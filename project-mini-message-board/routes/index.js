@@ -1,16 +1,22 @@
 var express = require("express");
 var router = express.Router();
 
+const getDate = () => {
+  let date = new Date();
+
+  return `${date.toDateString()} ${date.toLocaleTimeString()}`;
+};
+
 const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: new Date(),
+    added: getDate(),
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: new Date(),
+    added: getDate(),
   },
 ];
 
@@ -27,7 +33,7 @@ router.post("/new", (req, res) => {
   messages.push({
     text: req.body.message,
     user: req.body.author,
-    added: new Date(),
+    added: getDate(),
   });
   // res.send(`Author: ${req.body.author}, Message: ${req.body.message}`);
   // sends the user back to the message page

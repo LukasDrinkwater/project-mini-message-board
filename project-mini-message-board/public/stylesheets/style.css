@@ -4,10 +4,20 @@ body {
 }
 
 a {
+  font-size: 2em;
+  font-weight: bold;
   color: #00b7ff;
 }
 
 .message-container ul {
   display: flex;
-  background: blue;
+  flex-direction: column;
+  /* background: blue; */
+}
+
+li {
+  list-style: none;
+  border-bottom: 2px solid black;
+  margin: 0.25em;
+  padding: 0.25em;
 }
